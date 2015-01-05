@@ -1,0 +1,65 @@
+def start_game():
+    game = createIntialRound()
+    while(withChance(w))       #where does w come frome?
+        m = math.power((1-w),-1)  #this one's not needed, it's a calcultion of the average # of rounds
+        allOrNone(game)
+             
+def allOrNone(game):
+    PayoffD    
+    PayoffC
+    for i in N: #amount of players 
+        if Player[i] == 'C'
+        then PayoffC +=  payoffD(k,F,c,N) - c
+        else PayoffD +=  payoffD(k,F,c,N)              #D
+    
+    
+def payoffD(k,F,c,N)
+     return (k*F*c)/N
+
+def createIntialRound():
+
+def strategy(N):
+    bitArray[0]*N
+    
+def fermi_updaterule():
+    PlayerA = pickRandomPlayer()          #playerA contains [0] strategy, [1] fitness(=the average payoff attained over all rounds
+                                          #and possible groups by individuals adopting strategy)
+        
+    if (withChance(0.5))                 #when do we chose i) or i)) 50/50 chance?
+    then if(withChance(mu))              #mutatie with prob μ
+         then PlayerA.OtherStrategy()    #mutaion?
+    else PlayerB = pickRandomPlayer()
+         if (withChance ((1-mu)/1+ math.exp(-beta*(PlayerA[1]-PlayerB[1]))) #beta = intensity of selection
+             then PlayerA.setNewStrategy(PlayerB[0])
+    
+#In each round for each player, an execution error can be made with prob eps
+def execution_error(Player):
+    if withChance(epsilon)
+    then Player.OtherStrategy()
+    
+
+#pseudocode
+Z = wellmixed population 
+N = create random groups of size
+loop round < prob w
+    for each player
+        if chanceToC       #depends on contributions of previous round
+            contributingC  #eigenlijk lowercase c, but i like camelCase
+            setStrategy
+        else chancetoD
+             setStrategy
+    forloop done
+    pickRandomPlayer => fermi update rule
+    val = getC * F #enhancement factor
+    distribute val equally over N 
+    PayoffC = payoffD(k,F,c,N) - c       #is this per round or player?
+    PayoffD =  payoffD(k,F,c,N)    
+    m = math.power((1-w),-1)
+    
+    
+setStrategy
+    array[N+2]
+    [0] = inital strategy   #b^-1
+    [1] =                   #b^0
+    ..... #behavior depends on the #C in the previous round
+    [N] =                   #b^N
