@@ -22,78 +22,99 @@ Engaging in repeated group interactions such as \textit{Public Good Games}  (\te
 \section{Introduction}
 When studying \textit{Public Good Games}  (\textbf{PGG}), such as \textit{N-person Prisoner's Dilemma}  (\textbf{NPD}), social dilemmas arise where self-serving behavior is worse than collective behavior \citep{kollock1998social}. These problems can be found in economics as well in biology.
 Without additional mechanisms such as risk of future loss \citep{santos2011risk}, institutions who deal with free-riders who choose not to contribute \citep{vasconcelos2013bottom,sigmund2010social}, thresholds that must be surpassed before collecting action can be successful \citep{pacheco2011evolutionary}, a network of interactions or social diversity \citep{wang2013interdependent,santos2008social}, punishment \citep{fehr2002altruistic,brandt2006punishing} or voluntary participation \citep{hauert2002volunteering} there is a possibility that populations will fall into a tragedy of the commons \citep{hardin1968tragedy}.
-Collective action problems often involve repeated actions between individuals of the same group \citep{boyd1988evolution}. Real life examples can be found in world leaders trying to cooperate in changing the climate problems \citep{milinski2008collective,barrett2012climate}, the monetary crisis \citep{jacquet2001economic} and even in anarchies \citep{axelrod1985achieving}. This leads to the question whether direct reciprocity can escape the tragedy of the commons. If we subdivide this question, it is difficult to find to whom one should reciprocate in repeated N-player interactions. Direct reciprocity has been generalized for \textbf{PGG} where individuals of group size N only cooperate if there are at least M $(0<=M<=N)$ cooperators in the previous round \citep{van2012emergence,kurokawa2009emergence}. Such generalized reciprocators provide a generalization of the \textit{Tit For Tat}  (\textbf{TFT}) strategy, but they constitute a small set of all individual strategies.
-In this research exploration of different strategies will be researched, where individuals may adopt a different strategy when playing \textbf{PGG} on the condition that their actions are based on the behavior of the group in the previous round.
-\textit{\textbf{more??}}
+Collective action problems often involve repeated actions between individuals of the same group \citep{boyd1988evolution}. Real life examples can be found in world leaders trying to cooperate in changing the climate problems \citep{milinski2008collective,barrett2012climate}, the monetary crisis \citep{jacquet2001economic} and even in anarchies \citep{axelrod1985achieving}. This leads to the question whether direct reciprocity can escape the tragedy of the commons. If we subdivide this question, it is difficult to find to whom one should reciprocate in repeated N-player interactions. Direct reciprocity has been generalized for PGG where individuals of group size N only cooperate if there are at least M $(0<=M<=N)$ cooperators in the previous round \citep{van2012emergence,kurokawa2009emergence}. Such generalized reciprocators provide a generalization of the \textit{Tit For Tat}  (\textbf{TFT}) strategy, but they constitute a small set of all individual strategies.
+In this research exploration of different strategies will be researched, where individuals may adopt a different strategy when playing PGG on the condition that their actions are based on the behavior of the group in the previous round.
+The goal of this project is to research the AON strategy as proposed in the Evolution of All-Or-None Strategies in Repeated Public
+Goods Dilemmas \citep{project} paper. Not-Quite-All-Or-Nothing (\textbf{NQOAN}), a variant of the All-Or-None strategy where players cooperate if a fixed percentage of players cooperate or defect, will also be explored and subjected to the same tests.
 
 \section{Methods}
-Let us consider a finite and will-mixed population $Z$, with only cooperators and defectors, who randomly form groups of size $N$ and play the repeated version of \textbf{NPD}. In every round individuals can either cooperate (\textbf{C}) by contributing an amount $c$ to a public pool or defect (\textbf{D}). The sum of contributions of a group per round are multiplied by an enhancement factor $F$ and will become a public good to the group. This will be equally divided amongst  the $N$ individuals. In each round defectors will receive a payoff of $\pi_{D}= \frac{kFc}{N}$  and cooperators will receive $\pi_{C}=\pi_{D}-c$ where $k$ is the number of cooperators in that round. In this model \textbf{PGG} will have an undetermined amount of rounds, where at the end of every round another round might take place with probability $w$. This leads to an average amount of rounds, denoted as $m$, where $m= (1-w)^{-1}$. Individuals decide in each round, except the first round, to cooperate or not based on the total amount of contributions in the previous round.
-\textit{\textbf{...bitshizzle...}}
+Let us consider a finite and will-mixed population $Z$, with only cooperators and defectors, who randomly form groups of size $N$ and play the repeated version of NPD. In every round individuals can either cooperate (\textbf{C}) by contributing an amount $c$ to a public pool or defect (\textbf{D}). The sum of contributions of a group per round are multiplied by an enhancement factor $F$ and will become a public good to the group. This will be equally divided amongst  the $N$ individuals. In each round defectors will receive a payoff of $\pi_{D}= \frac{kFc}{N}$  and cooperators will receive $\pi_{C}=\pi_{D}-c$ where $k$ is the number of cooperators in that round. In this model PGG will have an undetermined amount of rounds, where at the end of every round another round might take place with probability $w$. This leads to an average amount of rounds, denoted as $m$, where $m= (1-w)^{-1}$. Individuals decide in each round, except the first round, to cooperate or not based on the total amount of contributions in the previous round.
 The Fermi update rule \citep{traulsen2006stochastic,grujic2014comparative} is used each round to revise the strategies of the individuals.
 In each round a random individual $A$ will be chosen, with its strategy $S_{A}$ and fitness $f_{_S{A}}$. The fitness of a strategy is the average payoff over all rounds for that strategy. Individual $A$ can change its strategy through $i)$ mutating with probability $\mu$ or $ii)$ by imitating a random individual $B$ with probability $(1-\mu)(1+exp[-\beta(f_{_S{A}}-f_{_S{B}})])^{-1}$, where $\beta$ is the intensity of selection.
 In each round after choosing to cooperate or defect, an individual may choose the opposite behavior with a probability of $\epsilon$.
 
 
-\section{Results}
-If we denote $\eta$ as the behavioral fraction of cooperation we get the following graph. Not every simulation will end in the same round, because of the probability of $w$, we will show only simulations when  $\# \eta > \frac{1}{\# simulations}$.
+\section{Results and discussion}
+If we denote $\eta$ as the behavioral fraction of cooperation we get the following graph. Not every simulation will end in the same round, because of the probability of $w$, we show the mean of all simulations up to the round that at least a quarter of the simulations can reach for representativity.
 
 \includegraphics[width=3.6in,angle=0]{img/cfraction_aon.png}
-\captionof{figure}{Cooperation fraction throughout time (100 sims). Where $Z=100$, $N=10$, $F=10$, $c= 2$, $\beta=1$, $\epsilon=0.05$, $\mu=0.01$ and the initial amount of \textbf{$C$} $= 0.5$}
+\captionof{figure}{Cooperation fraction throughout time (100 sims). Where $Z=100$, $N=10$, $F=8$, $c= 2$, $\beta=1$, $\epsilon=0.05$, $\mu=0.001$ and the initial amount of \textbf{$C$} $= 0.5$}
 \label{fig1}
-As can be seen in Fig.~\ref{fig1} in the first round almost all simulations will go near 0.05. This is due to the fact that in the first round all choices are generated randomly. After this we get an average of 0.6 because of choice changes as a result of the $\epsilon$  value.
-In Fig.~\ref{fig2} we will test the robustness of the \textbf{AON} strategy. As can be seen when $\epsilon$ is very low we get a high behavioral fraction as opposed to a high $\epsilon$. This result is to be expected, as an $\epsilon$ nearing zero stands for a group of AON players that almost never behave unexpectedly and will converge towards cooperating nearly every time.
+\vspace{5 mm}
 
+As can be seen in Fig.~\ref{fig1} in the first round almost all simulations will go near $0.05$. This is due to the fact that in the first round all choices are generated randomly. After this we get an average of $0.6$ because of choice changes as a result of the $\epsilon$  value.
+In Fig.~\ref{fig2} we will test the robustness of the AON strategy. As can be seen when $\epsilon$ is very low we get a high behavioral fraction as opposed to a high $\epsilon$. This result is to be expected, as an $\epsilon$ nearing zero stands for a group of AON players that almost never behave unexpectedly and will converge towards cooperating nearly every time.
 
+\vspace{5 mm}
 \includegraphics[width=3.6in,angle=0]{img/cfraction_epsilon_aon.png}
 \captionof{figure}{Cooperation fraction throughout time (100 sims) with different $\epsilon$.}
 \label{fig2}
+\vspace{5 mm}
+
 
 
 % In Fig.~\ref{fig2}
 
 
-As can be seen on Fig.~\ref{fig4} the higher the enhancement factor $F$ is, the higher the mean will be, which is a logical consequence. It is also shown that in these simulations, the strategy has a negative return if $F<2$.
+As can be seen on Fig.~\ref{fig3} the higher the enhancement factor $F$ is, the higher the mean will be, which is a logical consequence. It is also shown that in these simulations, the strategy has a negative return if $F<2$.
 \includegraphics[width=3.6in,angle=0]{img/meanpayoff_F_aon.png}
 \captionof{figure}{Mean payoff for different $F$}
 \label{fig3}
-Fig.~\ref{fig4} shows that there is not meaningful difference for different values of $F$. This is an intuitive result, seeing as none of the players using the AON strategy make use of the previous or expected payoff to choose C or D.
+\vspace{5 mm}
+
+Fig.~\ref{fig4} shows that there is no meaningful difference for different values of $F$. This is an intuitive result, seeing as none of the players using the AON strategy make use of the previous or expected payoff to choose C or D. Note that the payoff for a population with only cooperators would be a constant $c(F-1)$.
 \includegraphics[width=3.6in,angle=0]{img/cfraction_F_aon.png}
 \captionof{figure}{$\eta$ for different enhancement factor $F$}
 \label{fig4}
+\vspace{5 mm}
+
+Fig. ~\ref{fig6} shows us that every player has a small probability of changing its choice, the probability that one or more players will defect when the rest cooperates or vice versa, rises linearly with the number of players. As only one player needs to behave different from the rest to offset the collective choice and effect a situation where every AON player defects, it stands to reason that the more player there are, the more rounds will result in total defection.
+\vspace{5 mm}
 
 \includegraphics[width=3.6in,angle=0]{img/meanpayoff_N_aon.png}
 \captionof{figure}{Mean payoff for different $N$}
 \label{fig5}
+\vspace{5 mm}
 
 
-AAIC = unconditional cooperators
+
+To test the viability of AON we mixed its population with \textbf{AllC} and \textbf{AllD} (unconditional cooperators and defectors respectively). The results for these experiments can be witnessed in Figures ~\ref{fig6} and ~\ref{fig7}. Every line denotes the cooperation fraction for a different starting fraction of AON players. 
 \includegraphics[width=3.6in,angle=0]{img/cfraction_AONAllCfractions_aon.png}
 \captionof{figure}{$\eta$ for different AON/AIIC}
 \label{fig6}
-AAID = unconditional defectors
+\vspace{5 mm}
+
 \includegraphics[width=3.6in,angle=0]{img/cfraction_AONAllDfractions_aon.png}
 \captionof{figure}{$\eta$ for different AON/AIID} 
 \label{fig7}
-
+\vspace{5 mm}
+As can be seen, the populations quickly become fairly stagnant even though the mix with AllD tends to fluctuate more towards the beginning. Sadly, due to our model a change in strategy is only allowed once per round and then only for one random individual, we expect otherwise more violent changes in population distribution would have occurred. Let us now inspect the impact of starting conditions on the course of the game. For AllD we observe that the more AllD players the game starts with, the less cooperation there is which was of course to be expected. So why do the games with only $10\%$ AllD players stagnate around little over $40\%$ cooperators? This is because of the inability of AON to sustain itself when unconditional defectors are present. After a turn of cooperation by AON players they will inevitably defect when AllD players are present, capping the maximum $\eta$ at $0.5$. This effect is further worsened by errors. This phenomenon can be seen as a sense of self-preservation where a player that gets cheated on too often cheats itself to avoid being duped.  The effect of AllC players is more benignent. Fig. ~\ref{fig6} shows a positive correlation between AllC players and $\eta$. Why though do AON players seem to defect en masse when AllC players are present? This is because of the population's inability to come to an unanimous decision. In pure AON populations we observe a round of mass defection, followed by cooperation. This mass defection has now become impossible by the influence of the AllC immigrants, rendering the AON players unable to ever cooperate. This behavior works out positively for the AON player in situations with large fractions of AllC players, depending on the multiplication factor, because these AON players effectively cheat the system of AllC players.
+We have also confirmed that there is a slight decline in the population of AON players where there are not too many AllC players to begin with (in these cases the AON players make more profit), meaning AON players actually migrate to becoming AllC. Once again this effect is not immensely present due to our model. 
+	
+\vspace{5 mm}
 
 \includegraphics[width=3.6in,angle=0]{img/meanpayoff_AONAllCfractions_aon.png}
 \captionof{figure}{Mean payoff for different AON/AIIC}
 \label{fig8}
+\vspace{5 mm}
+
 
 \includegraphics[width=3.6in,angle=0]{img/meanpayoff_AONAllDfractions_aon.png}
 \captionof{figure}{Mean payoff for different AON/AIID}
 \label{fig9}
+\vspace{5 mm}
 
-\includegraphics[width=3.6in,angle=0]{img/cfraction_epsilon_nqaongamma01.png}
-\captionof{figure} {$\eta$ with $\epsilon$ $\gamma=0.01$}
-\label{fig10}
 
 \includegraphics[width=3.6in,angle=0]{img/meanpayoff_epsilon_nqaongamma01.png}
 \captionof{figure} {mean payoff with $\epsilon$ $\gamma=0.01$}
 \label{fig11}
+\vspace{5 mm}
 
-\section{Discussion}
-Something something
+\includegraphics[width=3.6in,angle=0]{img/meanpayoff_epsilon_nqaongamma02.png}
+\captionof{figure} {NQAON fraction with $\epsilon$ $\gamma=0.02$}
+\label{fig11}
+\vspace{5 mm}
+
 
 \section{Acknowledgments}
 github page
